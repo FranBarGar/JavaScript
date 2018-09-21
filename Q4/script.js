@@ -2,14 +2,7 @@ x = prompt("Introduzca un numero");
 y = prompt("Introduzca otro numero");
 
 if (x && y && !isNaN(x) && !isNaN(y)) {
-  if (x>=y) {
-    big = x;
-    small = y;
-  }else {
-    big = y;
-    small = x;
-  }
-  for (var i = small; i <= big; i++) {
+  for (var i = Math.min(x, y); i <= Math.max(x, y); i++) {
     if (i%8==0) {
       document.write(i + "<br/>");
     }
