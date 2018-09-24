@@ -1,6 +1,6 @@
 var num = prompt("Introduzca los numeros a sumar: ");
 
-if (num && !isNaN(parseFloat(num))) {
+if (num && !isNaN(num)) {
   var length = num.length;
   var sum = 0;
   for (var i = 0; i < length; i++) {

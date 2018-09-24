@@ -4,7 +4,7 @@ var letras = ['T', 'R', 'W', 'A', 'G', 'M', 'Y', 'F', 'P', 'D', 'X', 'B', 'N', '
 'C', 'K', 'E', 'T'];
 var letter = letras[dniNum%23];
 
-if (dniNum && dniNum>=0 && dniNum<=99999999) {
+if (dniNum && !isNaN(dniNum) && dniNum>=0 && dniNum<=99999999) {
   if (dniLetter.toUpperCase()==letter) {
     document.write("El DNI introducido es correcto ("+dniNum+letter+")");
   } else {
