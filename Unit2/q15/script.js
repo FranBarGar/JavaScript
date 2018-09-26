@@ -3,9 +3,18 @@ var bool = true;
 
 if (string) {
   var string1 = string.toLowerCase();
-  var length = string.length
-  for (var i = 0, j = length-1; i < length; i++, j--) {
-    if (string[i]!=string[j] && !string[i] && !string[j]) {
+
+  var string2 = "";
+  var length = string1.length;
+  for (var i = 0; i < length; i++) {
+    if (string[i]!=" ") {
+      string2 += string1[i];
+    }
+  }
+
+  var length1 = string2.length;
+  for (var i = 0, j = length1-1; i < length1; i++, j--) {
+    if (string2[i]!=string2[j]) {
       bool = false;
       break;
     }
