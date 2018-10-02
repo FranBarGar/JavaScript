@@ -16,7 +16,7 @@ do {
     break;
     case "3":
     param1();
-    mod2(param2());
+    mod0(param2());
     break;
     case "4":
     bool = confirm("¿Desea salir?");
@@ -55,18 +55,6 @@ function param2() {
 }
 
 /*
-Usa dos delimitadores que deben ser diferentes.
-Recibe la posicion del ultimo caracter a mostrar.
-*/
-function mod0(pos2) {
-  if (del1!=del2) {
-    mod2(pos2);
-  } else {
-    console.log("Los delimitadores deben ser distintos.");
-  }
-}
-
-/*
 Usa solo un delimitador
 Recibe la posicion del ultimo caracter a mostrar.
 */
@@ -82,8 +70,8 @@ function mod1(pos2) {
 Usa dos delimitadores pero no se especifica si deben ser iguales o diferentes.
 Recibe la posicion del ultimo caracter a mostrar.
 */
-function mod2(pos2) {
-  if (pos1!=-1 && pos2!=-1) {
+function mod0(pos2) {
+  if (pos1!=-1 && pos2!=-1 && del1!=del2) {
     console.log(`Frase introducida: "${str}"\nDelimitador inicial: "${del1}"\nDelimitador final: "${del2}"\nResultado: "${str.slice(pos1, pos2).trim()}"`);
   } else {
     console.log("Alguno de los delimitadores no está en la frase.");
