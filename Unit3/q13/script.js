@@ -13,8 +13,6 @@ document.write(`Palabras introducidas: "${longStr2}"<br>Estadisticas: <br>`);
 do {
   var aux = longStr[0];
   var auxLength = longStr.length;
-  for (var j = auxLength; j == longStr.length; j--) {
-    longStr = longStr.replace(aux, "");
-  }
+  longStr = longStr.replace(new RegExp(aux, "g"), "");
   document.write(`${aux} = ${auxLength-longStr.length}<br>`);
 } while (longStr[0]);
