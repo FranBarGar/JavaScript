@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title></title>
+  </head>
+  <body>
+    <script type="text/javascript">
+    /*Indica si son correctos o no los siguientes patrones. En el caso de no ser correctos, corrígelos para
+    que lo sean.
+    Se consideran válidas las siguientes urls:
+     http://www.google.es
+     https://url.com
+    */
+    var a1 = "http://www.google.es";
+    var a2 = "https://url.com";
+    var i = 1;
+
+    //var patron1= new RegExp(/[http,https{1}]:\/\/[www?]\.[.*]\.[.*]/,i);
+    var patron1= new RegExp('^(http|https):\\/\\/(www\\.)?\\w+\\.\\w{2,3}$', 'i');
+    document.write(`Patron${i++}: <br>`)
+    document.write(patron1.test(a1)+'<br>');
+    document.write(patron1.test(a2)+'<br><br>');
+
+    var patron2 = /^http[s]?\:\/\/\d+\.\d.\d+$/;
+    var patron2 = /^https?:\/\/(www\.)?\w+\.\w{2,3}$/i;
+    document.write(`Patron${i++}: <br>`)
+    document.write(patron2.test(a1)+'<br>');
+    document.write(patron2.test(a2)+'<br><br>');
+// aqui
+    var patron3 = /^(http\:\/\/)([w]{3})?[\.]?\w*[\.]\w*$/;
+    var patron3 = /^https?:\/\/(w{3}\.)?\w+\.\w{2,3}$/i;
+    document.write(`Patron${i++}: <br>`)
+    document.write(patron2.test(a1)+'<br>');
+    document.write(patron2.test(a2)+'<br><br>');
+//
+    var patron4 = /^http\:\/\/(.+)?\..+\..+$/;
+    var patron4 = /^https?:\/\/(www\.)?\w+\.\w{2,3}$/i;
+    document.write(`Patron${i++}: <br>`)
+    document.write(patron2.test(a1)+'<br>');
+    document.write(patron2.test(a2)+'<br><br>');
+//
+    var patron = /http[s]?\:\/\/[w]*\.?[a-z]+\.[es]?[com]?/;
+    var patron = /https?:\/\/(w{3}\.)?[a-z]+\.(es|com)/i;
+    document.write(`Patron${i++}: <br>`)
+    document.write(patron1.test(a1)+'<br>');
+    document.write(patron1.test(a2)+'<br><br>');
+//
+    var patron =/^(http:\/\/ | https:\/\/)[A-Za-z]* \.(com|es)$/;
+    var patron =/^(http:\/\/|https:\/\/)(www\.)?[a-z]+\.(com|es)$/i;
+    document.write(`Patron${i++}: <br>`)
+    document.write(patron1.test(a1)+'<br>');
+    document.write(patron1.test(a2)+'<br><br>');
+//
+    var regurl = new RegExp("^((https|http)://www\.[a-z]+\.[a-z]+)$");
+    var regurl = new RegExp("^(https|http)://(www\.)?[a-z]+\.[a-z]{2,3}$", "i");
+    document.write(`Patron${i++}: <br>`)
+    document.write(patron1.test(a1)+'<br>');
+    document.write(patron1.test(a2)+'<br><br>');
+//
+    var patron = /^(http|https)\:\/\/(www\.)?[a-z0-9]+\.[a-z]$/;
+    var patron = /^(http|https)\:\/\/(www\.)?[a-z0-9]+\.[a-z]$/;
+    document.write(`Patron${i++}: <br>`)
+    document.write(patron1.test(a1)+'<br>');
+    document.write(patron1.test(a2)+'<br><br>');
+
+    var reg = /^http(s)?\:\/\/w{3}\.[a-z0-9]+\.(es|com)$/;
+    var reg = /^http(s)?\:\/\/w{3}\.[a-z0-9]+\.(es|com)$/;
+    document.write(`Patron${i++}: <br>`)
+    document.write(patron1.test(a1)+'<br>');
+    document.write(patron1.test(a2)+'<br><br>');
+
+    var patUrl = /^(http|https):\/\/(w{3}\.|)[a-zA-Z0-9]+\.[a-z]{3}$/;
+    var patUrl = /^(http|https):\/\/(w{3}\.|)[a-zA-Z0-9]+\.[a-z]{3}$/;
+    document.write(`Patron${i++}: <br>`)
+    document.write(patron1.test(a1)+'<br>');
+    document.write(patron1.test(a2)+'<br><br>');
+
+    var pat = /^(http|https)\:\/\/(www\.)?[a-zA-Z]*\.(es|com)$/;
+    var pat = /^(http|https)\:\/\/(www\.)?[a-zA-Z]*\.(es|com)$/;
+    document.write(`Patron${i++}: <br>`)
+    document.write(patron2.test(a1)+'<br>');
+    document.write(patron2.test(a2)+'<br><br>');
+    </script>
+  </body>
+</html>
