@@ -1,8 +1,20 @@
-var str = `hola que tal,
-soy colosal,
-lo soy
-por que no hay
-quien me pare (y a esta frase, tampoco)`;
+var str = `Érase un hombre a una nariz pegado,
+érase una nariz superlativa,
+érase una nariz sayón y escriba,
+érase un peje espada muy barbado.
+
+Era un reloj de sol mal encarado,
+érase una alquitara pensativa,
+érase un elefante boca arriba,
+era Ovidio Nasón más narizado.
+
+Érase un espolón de una galera,
+érase una pirámide de Egipto,
+las doce Tribus de narices era.
+
+Érase un naricísimo infinito,
+muchísimo nariz, nariz tan fiera
+que en la cara de Anás fuera delito.`;
 
 do {
   var bool = false;
@@ -16,13 +28,13 @@ do {
 
   switch (opt) {
     case "1":
-    console.log(str.match(new RegExp(`\\b${param()}\\S*`, "mg")));
+    console.log(str.match(new RegExp(`\\b${param()}\\[A-ZÁ-ÚÑ]*`, "mg")));
     break;
     case "2":
-    console.log(str.match(new RegExp(`\\S+${param()}\\b`, `mg`)));
+    console.log(str.match(new RegExp(`[A-ZÁ-ÚÑ]+${param()}\\b`, `mg`)));
     break;
     case "3":
-    let matches = str.match(new RegExp(`\\S*${param()}\\S*`, `mg`));
+    let matches = str.match(new RegExp(`\\[A-ZÁ-ÚÑ]*${param()}\\[A-ZÁ-ÚÑ]*`, `mg`));
     console.log(matches!=null?matches.length:0);
     break;
     case "4":

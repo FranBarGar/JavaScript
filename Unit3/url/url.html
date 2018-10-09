@@ -17,7 +17,7 @@
     var i = 1;
 
     //var patron1= new RegExp(/[http,https{1}]:\/\/[www?]\.[.*]\.[.*]/,i);
-    var patron1= new RegExp('^(http|https):\\/\\/(www\\.)?\\w+\\.\\w{2,3}$', 'i');
+    var patron1= new RegExp('^(http|https)://(www\\.)?\\w+\\.\\w{2,3}$', 'i');
     document.write(`Patron${i++}: <br>`);
     document.write(patron1.test(a1)+'<br>');
     document.write(patron1.test(a2)+'<br><br>');
