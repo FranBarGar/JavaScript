@@ -21,4 +21,4 @@ do {
 } while (!param && isNaN(param));
 
 console.log(str+"\n");
-console.log(str.match(new RegExp(`\\b[A-ZÁ-ÚÑ]{${param}}\\b`, `img`)));
+console.log(str.match(new RegExp(`( |^)[A-ZÁ-ÚÑ]{${param}}(?=[ \\.,;]|$)`, `img`)));
