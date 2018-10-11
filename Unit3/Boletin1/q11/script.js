@@ -101,7 +101,7 @@ function paramBase() {
   num1 = Number(num1);
 
   do {
-    num2 = prompt("Introduzca el numero: ");
+    num2 = prompt(`Introduzca el numero en base ${num1}: `);
   } while (!num2 || !regExp2.test(num2));
 
   do {
