@@ -1,7 +1,5 @@
 if (typeof window.find !== "undefined") {
-  window.setTimeout(function(){
-    main(false);
-  }, 2000);
+  timer(false);
 } else {
   alert(`El navegador no soporta el metodo find.`)
 }
