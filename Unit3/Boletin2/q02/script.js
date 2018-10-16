@@ -1,4 +1,4 @@
-if (typeof window.find !== "undefined") {
+if (window.find) {
   timer(false);
 } else {
   alert(`El navegador no soporta el metodo find.`)
