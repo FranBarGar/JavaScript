@@ -1,0 +1,14 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+<head>
+  <meta charset="utf-8">
+  <title>NewWindow</title>
+  <script src="script.js" charset="utf-8"></script>
+</head>
+<body>
+  <form>
+    <input type="button" value="Mover a la derecha" onclick="mover(opener.document.forms[0].elements[0].value)">
+    <input type="button" value="Mover a la izquierda" onclick="mover(-opener.document.forms[0].elements[0].value)">
+  </form>
+</body>
+</html>
