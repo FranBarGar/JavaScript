@@ -20,7 +20,7 @@ b) prompt()
 d) frameborder = '0'
 
 8.- ¿Cómo se define el número de marcos presente en un conjunto de marcos?
-b) Con el valor de frameset
+d) Con el valor de cols
 
 9.- ¿Cómo se cierra una ventana primaria desde una ventana secundaria?
 b) No se puede cerrar una ventana primaria desde una secundaria
