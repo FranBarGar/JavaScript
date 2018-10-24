@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+<head>
+    <meta charset="utf-8">
+    <title>FirstQuestion</title>
+    <script src="script.js" charset="utf-8"></script>
+</head>
+<body>
+    <form>
+        <label for="valor">Valor: </label>
+        <input id="valor" type="number" name="valor" value="0"><br>
+        <label for="impuesto">Tipo de impuesto: </label>
+        <select id="impuesto" name="impuesto">
+            <option value="1">1</option>
+            <option value="2">2</option>
+            <option value="3">3</option>
+        </select><br>
+        <input type="button" name="Calcular" value="Calcular" onclick="obtenerImporteConImpuestos(document.forms[0].elements[0].value, document.forms[0].elements[1].value)">
+    </form>
+</body>
+</html>
