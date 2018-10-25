@@ -1,45 +1,39 @@
-var num, bool;
 var clearNum = [];
-var calcTriple = (num) => num * 3;
 
 function introducirNumeros() {
-    bool = false;
-    document.getElementById("list").innerHTML = "";
-    var str = prompt(`Introduzca numeros separados por coma.`);
-    num = str.split(",");
-    var longStr = "";
+    list.innerHTML = "";
+    var num = prompt(`Introduzca numeros separados por coma.`).split(",");
     for (var i = 0; i < num.length; i++) {
-        if (!isNaN(num[i])) {
+        if (num[i] && !isNaN(num[i])) {
             clearNum.push(parseInt(num[i]));
-            longStr += `<li>${num[i]}</li>`;
-            bool = true;
         }
     }
-    document.getElementById("list").innerHTML += longStr;
+    crearLista(...clearNum);
+}
+
+function crearLista(...nums) {
+    if (nums.length != 0) {
+        for (var i = 0; i < nums.length; i++) {
+            list.innerHTML += `<li>${nums[i]}</li>`;
+        }
+    }
 }
 
 function menor() {
     if (bool) {
-        var menor;
-        for (var i = 0; i < clearNum.length; i++) {
-            if (!menor) {
-                menor = clearNum[i];
-            } else if (menor > clearNum[i]) {
-                menor = clearNum[i];
-            }
-        }
-        alert(`El numero menor es ${menor}`);
+        alert(`El numero menor es ${Math.min(...clearNum)}`);
     } else {
         alert(`La lista no está creada.`);
     }
 }
 
+var calcTriple = num => num * 3;
 
 function triple() {
-    if (bool) {
-        for (var i = 0; i < clearNum.length; i++) {
-            alert(`El triple de ${clearNum[i]} es ${calcTriple(clearNum[i])}`);
-
+    var items = list.getElementsByTagName("li");
+    if (items.length != 0) {
+        for (var i = 0; i < items.length; i++) {
+            alert(`El triple de ${items[i].innerHTML} es ${calcTriple(Number(items[i].innerHTML))}`);
         }
     } else {
         alert(`La lista no está creada.`);
