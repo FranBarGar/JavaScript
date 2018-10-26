@@ -18,6 +18,7 @@ function crearLista(...str) {
         setTimeout(function() {
             w.body.innerHTML += `Todas las palabras.<br>${str.join(" - ")}<br><br>`;
             w.body.innerHTML += `Todas las palabras colocadas al revés. <br>${str.reverse().join(" - ")}<br><br>`;
+            str.reverse();
             w.body.innerHTML += `La primera palabra ingresada por el usuario.<br>${str[0]}<br><br>`;
             w.body.innerHTML += `La última palabra ingresada por el usuario.<br>${str[str.length-1]}<br><br>`;
             w.body.innerHTML += `El número de palabras presentes en el array.<br>${str.length}<br><br>`;
