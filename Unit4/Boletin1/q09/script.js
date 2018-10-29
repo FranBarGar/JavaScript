@@ -1,4 +1,5 @@
 var ar = [];
+var asignaturas = ["DAWEB", "DWEC", "DWES"]
 
 for (i = 0; i < 5; i++) {
     var alumno = [];
@@ -8,7 +9,7 @@ for (i = 0; i < 5; i++) {
     alumno.push(nombre);
     for (m = 0; m < 3; m++) {
         do {
-            var nota = prompt(`Introduzca la nota de el alumno en el modulo${m+1}: `);
+            var nota = prompt(`Introduzca la nota de el alumno en el modulo ${asignaturas[m]}: `);
         } while (!(/^(([0-9])|(10))$/.test(nota)));
         alumno.push(nota)
     }
@@ -18,10 +19,10 @@ for (i = 0; i < 5; i++) {
 for (var i = 0; i < ar.length; i++) {
         tabla.innerHTML+=`
         <tr>
-        <th>${ar[i][0]}</th>
-        <th>${ar[i][1]}</th>
-        <th>${ar[i][2]}</th>
-        <th>${ar[i][3]}</th>
+        <td>${ar[i][0]}</td>
+        <td>${ar[i][1]}</td>
+        <td>${ar[i][2]}</td>
+        <td>${ar[i][3]}</td>
         </tr>`;
 
 }
