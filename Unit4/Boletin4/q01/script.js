@@ -1,20 +1,18 @@
-var ar = new Array(10).fill(0);
-
-inicializarArray();
-
-function inicializarArray() {
-    ar = ar.map(elem => parseInt(Math.random()*11));
-}
+var ar = inicializarArray();
 
 console.log(ar);
+console.log(filtradoArray());
+console.log(impar());
+
+function inicializarArray() {
+    return new Array(10).fill(0).map(elem => parseInt(Math.random()*11));
+}
 
 function filtradoArray() {
     return ar.filter(function(elem){
         return elem<8;
     });
 }
-
-console.log(filtradoArray());
 
 function impar() {
     return ar.map(function(elem) {
@@ -24,5 +22,3 @@ function impar() {
         return elem;
     });
 }
-
-console.log(impar());
