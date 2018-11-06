@@ -1,5 +1,5 @@
 var anyoActual, anyoInicial, interval;
-const CRONO = 500;
+const CRONO = 5;
 const HORAXANYO = 8760;
 
 iniciarlizar();
