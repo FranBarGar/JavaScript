@@ -5,10 +5,25 @@ function Vehiculo(marca, modelo, color, anyo){
     this.anyo = anyo;
 }
 
-var v1 = new Vehiculo("Audi", "R7", "Verde fosforito", 2000);
-var v2 = new Vehiculo("Ford", "Kuga", "Magenta", 2000);
-var v3 = new Vehiculo();
+function Furgoneta(marca, modelo, color, anyo, pasajeros){
+    Vehiculo.call(this, marca, modelo, color, anyo);
+    this.pasajeros = pasajeros;
+}
+Furgoneta.prototype = new Vehiculo();
 
+function Todoterreno(marca, modelo, color, anyo, traccion){
+    Vehiculo.call(this, marca, modelo, color, anyo);
+    this.traccion = traccion;
+}
+Todoterreno.prototype = new Vehiculo();
+
+var v1 = new Todoterreno("Audi", "R7", "Verde fosforito", 2000, 'Gravitatoria');
+var v2 = new Furgoneta("Borbaguen", "de los Malacatones", "Blanco mierda", 2000, 5000);
+var v3 = new Vehiculo("Ford", "Kuga", "Magenta", 2000);
+
+console.log(v1);
+console.log(v2);
+console.log(v3);
 pintarTabla(v1, v2, v3);
 
 function pintarTabla(...vehiculos) {
@@ -30,8 +45,6 @@ function pintarTabla(...vehiculos) {
     }
     body.innerHTML += `</table>`;
 }
-
-Vehiculo.prototype.cilindrada;
 
 Vehiculo.prototype.mostrarDatos = function() {
     var toString = "Vehiculo";
@@ -55,42 +68,3 @@ Vehiculo.prototype.arrancar = function() {
 Vehiculo.prototype.frenar = function() {
     console.log(`El coche de marca ${this.marca}, modelo ${this.modelo}, de color ${this.color} ha parado.`);
 };
-
-Object.defineProperties(v1, {
-    marca: {
-        writable: true,
-        configurable: false,
-        enumerable: true,
-        value: v1.marca
-    },
-    modelo: {
-        writable: false,
-        configurable: true,
-        enumerable: true,
-        value: v1.modelo || 'xx'
-    },
-    mostrarDatos: {
-        writable: true,
-        configurable: true,
-        enumerable: false,
-        value: v1.mostrarDatos
-    },
-    acelerar: {
-        writable: true,
-        configurable: true,
-        enumerable: false,
-        value: v1.acelerar
-    },
-    arrancar: {
-        writable: true,
-        configurable: true,
-        enumerable: false,
-        value: v1.arrancar
-    },
-    frenar: {
-        writable: true,
-        configurable: true,
-        enumerable: false,
-        value: v1.frenar
-    },
-});
