@@ -3,20 +3,20 @@ function Empleado(nombre="", departamento="General") {
     this.departamento=departamento;
 }
 
-function Director(nombre="", departamento="General", informes=[]) {
+function Director(nombre, departamento, informes=[]) {
     Empleado.call(this, nombre, departamento);
     this.informes=informes;
 }
 Director.prototype = new Empleado();
 
-function Trabajador(nombre="", departamento="General", proyectos=[]) {
+function Trabajador(nombre, departamento, proyectos=[]) {
     Empleado.call(this, nombre, departamento);
     this.proyectos=proyectos;
 }
 Trabajador.prototype = new Empleado();
 
-function Ingeniero(nombre="", departamento="Ingenieria", proyectos=[], maquina="") {
-    Trabajador.call(this, nombre, departamento, proyectos);
+function Ingeniero(nombre, proyectos, maquina="") {
+    Trabajador.call(this, nombre, "Ingenieria", proyectos);
     this.maquina=maquina;
 }
 Ingeniero.prototype = new Trabajador();
