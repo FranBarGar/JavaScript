@@ -36,4 +36,7 @@ function Empresa(nombre, direccion, cif) {
 c1 = new Cliente("Barba", "ESPAÑA", "+34 100200300", "1A");
 i1 = new Info(3270, 21);
 f1 = new Factura(c1, ["Una pexhá de cosas", "100", "Maquillado"], i1);
+console.log(c1);
+console.log(i1);
+console.log(f1);
 f1.mostrarTotal();
