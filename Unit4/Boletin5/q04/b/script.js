@@ -2,17 +2,29 @@ function Factura(cliente, elementos, info) {
     var cliente = cliente;
     var elementos = elementos;
     var info = info;
+    calcularBase();
     calcularTotal();
 
     function calcularTotal(){
         info.setTotal(info.getBase()*(100+info.getIva())/100);
     };
+    function calcularBase() {
+        base = 0;
+        for (var i = 0; i < elementos.length; i++) {
+            base += elementos[i].getPrecio()*elementos[i].getCantidad();
+        }
+        info.setBase(base);
+    }
     this.mostrarTotal = function(){
         console.log(info.getTotal());
     };
 }
 
-Factura.prototype.empresa = new Empresa("Barba Tapadera S.L.", "Andorra", "99999999Z");
+Factura.prototype.empresa = {
+                             nombre:"Barba Tapadera S.L.",
+                             direccion:"Andorra",
+                             cif:"99999999Z"
+                            };
 
 function Cliente(nombre, direccion, telefono, nif) {
     var nombre = nombre;
@@ -21,7 +33,20 @@ function Cliente(nombre, direccion, telefono, nif) {
     var nif = nif;
 }
 
-function Info(base=0, iva=21, total=0, forma="contado") {
+function Elemento(descripcion, cantidad, precio) {
+    var descripcion = descripcion;
+    var cantidad = cantidad;
+    var precio = precio;
+
+    this.getPrecio = function() {
+        return precio;
+    };
+    this.getCantidad = function() {
+        return cantidad;
+    };
+}
+
+function Info(iva=21, forma="contado") {
     var base = base;
     var iva = iva;
     var total = total;
@@ -29,6 +54,9 @@ function Info(base=0, iva=21, total=0, forma="contado") {
 
     this.setTotal = function(num) {
         total = num;
+    };
+    this.setBase = function(num) {
+        base = num;
     };
     this.getTotal = function() {
         return total;
@@ -41,15 +69,10 @@ function Info(base=0, iva=21, total=0, forma="contado") {
     };
 }
 
-function Empresa(nombre, direccion, cif) {
-    var nombre = nombre;
-    var direccion = direccion;
-    var cif = cif;
-}
-
 c1 = new Cliente("Barba", "ESPAÑA", "+34 100200300", "1A");
 i1 = new Info(3270, 21);
-f1 = new Factura(c1, ["Una pexhá de cosas", "100", "Maquillado"], i1);
+e1 = [new Elemento("Aceitunas", 100, 3), new Elemento("Pistachos", 100, 3), new Elemento("Coca-Cola", 5, 2)];
+f1 = new Factura(c1, e1, i1);
 console.log(c1);
 console.log(i1);
 console.log(f1);
