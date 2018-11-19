@@ -1,5 +1,5 @@
 Array.prototype.eliminarValor = function(valor) {
-    var self = this;
+    let self = this;
     return self.filter(elem => elem !== valor);
 };
 
