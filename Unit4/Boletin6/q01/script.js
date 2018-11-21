@@ -8,8 +8,8 @@ map.set('EIE', 'Empresas, iniciativa emprendedora');
 console.log("Muestra cuántos módulos hay almacenados");
 console.log(map.size);
 console.log("Muestra el contenido de la estructura");
-var mostrar = (value,key,map)=>console.log(`${key} => ${value}`);
-console.log(map.forEach(mostrar));
+var mostrar = (value,key)=>console.log(`${key} => ${value}`);
+map.forEach(mostrar);
 console.log("Devuelve las abreviaturas de todos los módulos guardados");
 console.log(map.keys());
 console.log("Devuelve el nombre completo de todos los módulos");
@@ -21,4 +21,4 @@ if(map.has('DAW')){
     map.delete('DAW');
     console.log("DAW borrado correctamente");
 }
-console.log(map.forEach(mostrar));
+map.forEach(mostrar);
