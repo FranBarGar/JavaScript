@@ -1,9 +1,11 @@
 window.onload = function(){
-    document.getElementById('1.png').addEventListener('mouseover', function(){path('1.png')});
-    document.getElementById('2.png').addEventListener('mouseover', function(){path('2.png')});
+    var img = document.getElementsByTagName('img');
+    for (var i = 0; i < img.length; i++) {
+        img[i].addEventListener('mouseover', path);
+    }
 };
 
-function path(id)
+function path()
 {
-    alert(document.getElementById(id).src);
+    alert(this.src);
 }
