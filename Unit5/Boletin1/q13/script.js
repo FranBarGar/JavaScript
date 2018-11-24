@@ -9,6 +9,12 @@ window.onload = function(){
     for (var i = 0; i < days.length; i++) {
         days[i].addEventListener('change', cambiarDia);
     }
+    limpiar.addEventListener('click', function() {
+        location.reload();
+    });
+    enlace.addEventListener('click', function() {
+        location.replace('https://www.google.es/');
+    });
 };
 
 function cambiarColor(){
