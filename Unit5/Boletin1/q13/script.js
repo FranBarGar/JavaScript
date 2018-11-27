@@ -1,11 +1,11 @@
 var orden = [];
 
 window.onload = function(){
-    var input = color.elements;
+    var color = document.getElementsByName('color');
     for (var i = 0; i < color.length; i++) {
         color[i].addEventListener('click', cambiarColor);
     }
-    var days = dias.elements;
+    var days = document.getElementsByName('dias');
     for (var i = 0; i < days.length; i++) {
         days[i].addEventListener('change', cambiarDia);
     }
@@ -30,3 +30,4 @@ function cambiarDia(){
         dia.value = orden[orden.length-1]===undefined?"":orden[orden.length-1];
     }
 }
+// selectedIndex para el select
