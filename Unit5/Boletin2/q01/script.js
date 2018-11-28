@@ -12,14 +12,15 @@ var inputs;
 window.onload = function(){
     inputs = document.getElementsByTagName('input');
     for (var i = 0; i < inputs.length; i++) {
-        inputs[i].contador = i;
+        inputs[i].patron = i;
         inputs[i].addEventListener('change', function(){
-            if (!reg[this.contador].test(this.value)){
+            if (!reg[this.patron].test(this.value)){
                 this.value = '';
                 alert(`Debe introducir el formato indicado en el campo (${this.name})`);
             }
         });
     }
+    
     contraseña.addEventListener('click', function(){
         if (pass.value != confPass.value) {
             pass.value = '';
@@ -31,7 +32,36 @@ window.onload = function(){
             }
         }
     });
+
     ver.addEventListener('click', function() {
         pass.type = confPass.type = pass.type=='password'?'text':'password';
+    });
+
+    verCookie.addEventListener('click', function() {
+        var str = prompt('Introduzca la cookie que desea visualizar');
+        alert(getCookie(str)==null?'No existe dicha cookie':`El valor de ${str} es ${getCookie(str)}`);
+    });
+
+    verTodas.addEventListener('click', function() {
+        for (var i = 0; i < inputs.length; i++) {
+            alert(getCookie(inputs[i].name)==null?`No existe cookie para ${inputs[i].name}`:`El valor de ${inputs[i].name} es ${getCookie(inputs[i].name)}`);
+        }
+    });
+
+    eliminar.addEventListener('click', function() {
+        var str = prompt('Introduzca la cookie que desea eliminar');
+        if (getCookie(str)==null) {
+            alert('No existe dicha cookie');
+        } else {
+            delCookie(str);
+            alert('Cookie eliminada correctamente');
+        }
+    });
+
+    eliminarTodas.addEventListener('click', function() {
+        for (var i = 0; i < inputs.length; i++) {
+            delCookie(inputs[i].name);
+        }
+        alert('Cookies eliminadas correctamente');
     });
 };
