@@ -7,15 +7,30 @@ var reg = [
     /.{8,10}/i,
     /.{8,10}/i,
 ];
+var inputs;
 
 window.onload = function(){
-    var inputs = document.getElementsByTagName('input');
+    inputs = document.getElementsByTagName('input');
     for (var i = 0; i < inputs.length; i++) {
-        inputs[i].pattern = reg[i];
-        inputs[i].addEventListener('invalid', function(){
-            alert(`Debe introducir el formato indicado en el campo (${this.name})`);
+        inputs[i].contador = i;
+        inputs[i].addEventListener('change', function(){
+            if (!reg[this.contador].test(this.value)){
+                this.value = '';
+                alert(`Debe introducir el formato indicado en el campo (${this.name})`);
+            }
         });
     }
+    contraseña.addEventListener('click', function(){
+        if (pass.value != confPass.value) {
+            pass.value = '';
+            confPass.value = '';
+            alert('Las contraseñas deben ser iguales');
+        } else {
+            for (var i = 0; i < inputs.length; i++) {
+                setCookie(inputs[i].name, inputs[i].value);
+            }
+        }
+    });
     ver.addEventListener('click', function() {
         pass.type = confPass.type = pass.type=='password'?'text':'password';
     });
