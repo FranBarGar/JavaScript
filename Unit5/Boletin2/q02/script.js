@@ -1,12 +1,12 @@
 var reg = [
-    /^\d{2}\.\d{3}\.\d{3}-[TRWAGMYFPDXBNJZSQVHLCKE]$/i,
-    /^[a-zñáéíóú]+( [a-zñáéíóú]+){1,3}$/i,
-    /^(0[1-9])|([12][0-9])|(3[01])\/(0[1-9])|(1[0-2])\/\d{4}$/i,
-    /^[a-zñáéíóú][a-zñáéíóú0-9]+@[a-zñáéíóú]+\.[a-zñáéíóú]+$/i,
-    /^[0-9]|(10)$/,
-    /^http:\/\/www\.[a-zñáéíóú0-9]+\.[a-zñáéíóú0-9]$/i,
-    /^.{8,10}$/i,
-    /^.{8,10}$/i,
+    '\\d{2}\\.\\d{3}\\.\\d{3}-[TRWAGMYFPDXBNJZSQVHLCKE]',
+    '^[a-zñáéíóú]+( [a-zñáéíóú]+){1,3}$',
+    '^(0[1-9])|([12][0-9])|(3[01])/(0[1-9])|(1[0-2])/\\d{4}$',
+    '^[0-9]|(10)$',
+    '^[a-zñáéíóú][a-zñáéíóú0-9]+@[a-zñáéíóú]+\\.[a-zñáéíóú]+$',
+    '^http://www\\.[a-zñáéíóú0-9]+\\.[a-zñáéíóú0-9]+$',
+    '^.{8,10}$',
+    '^.{8,10}$',
 ];
 var inputs;
 
@@ -15,9 +15,10 @@ window.onload = function(){
     for (var i = 0; i < inputs.length; i++) {
         inputs[i].pattern = reg[i];
         inputs[i].addEventListener('change', function(){
-            if (!this.validity.patternMissmatch){
+            if (!this.checkValidity()){
+                this.setCustomValidity(`Debe introducir el formato indicado en el campo (${this.name})`);
+                this.reportValidity();
                 this.value = '';
-                alert(`Debe introducir el formato indicado en el campo (${this.name})`);
             }
         });
     }
