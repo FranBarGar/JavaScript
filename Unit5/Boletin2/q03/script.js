@@ -17,7 +17,8 @@ window.onload = function(){
         inputs[i].addEventListener('change', function(){
             if (!this.validity.patternMissmatch){
                 this.value = '';
-                alert(`Debe introducir el formato indicado en el campo (${this.name})`);
+                this.setCustomValidity(`Debe introducir el formato indicado en el campo (${this.name})`);
+                alert(this.validationMessage);
             }
         });
     }
