@@ -4,11 +4,12 @@
         <meta charset="utf-8">
         <title>FirstQuestion</title>
         <style media="screen">
+            *{}
             .enlace{
                 color:pink;
             }
             .cuerpo{
-                color:green;
+                background:green;
             }
         </style>
         <script src="script.js" charset="utf-8"></script>
@@ -26,10 +27,10 @@
             </p>
         </div>
         <select id="opciones">
-            <option></option>
-            <option name='a' value="enlace">Enlaces</option>
-            <option name='p' value="cuerpo">Cuerpo</option>
-            <option name='a,p' value="ambos">Ambos</option>
+            <option tag='*' value="*"></option>
+            <option tag='a' value="enlace">Enlaces</option>
+            <option tag='p' value="cuerpo">Cuerpo</option>
+            <option tag='a,p' value="enlace,cuerpo">Ambos</option>
         </select>
     </body>
 </html>
