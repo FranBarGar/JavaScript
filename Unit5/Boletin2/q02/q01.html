@@ -8,38 +8,30 @@
     </head>
     <body>
         <div>
-            <form action="#" method="post">
+            <form id="formulario" action="#" method="post">
                 <label for="dni">DNI: </label>
                 <input id="dni" type="text" name="DNI" required>
-                (Formato valido: 99.999.999-X)
                 <br>
                 <label for="nombre">Nombre: </label>
                 <input id="nombre" type="text" name="Nombre" required>
-                (Introduzca al menos un nombre y un apellido. Max: 2 nombres y 2 apellidos)
                 <br>
                 <label for="fecha">F. Nac.: </label>
-                <input id="fecha" type="text" name="F. Nac." required>
-                (Formato valido: dd/mm/yyyy)
+                <input id="fecha" type="date" name="F. Nac." required>
                 <br>
                 <label for="hijos">N. hijos: </label>
                 <input id="hijos" type="number" name="N. hijos" required>
-                (Rango valido: 0-10)
                 <br>
                 <label for="mail">E-mail: </label>
                 <input id="mail" type="text" name="E-mail" required>
-                (Formato valido: xxx@yyy.zzz)
                 <br>
                 <label for="pag">Pag. Web: </label>
                 <input id="pag" type="text" name="Pag. Web" required>
-                (Formato valido: http://www.xxxx.yyy)
                 <br>
                 <label for="pass">Contraseña: </label>
                 <input id="pass" type="password" name="Contraseña" required>
-                (Debe contener entre 8 y 10 caracteres)
                 <br>
                 <label for="confPass">Confirmar contraseña: </label>
                 <input id="confPass" type="password" name="Confirmar contraseña" required>
-                (Debe contener entre 8 y 10 caracteres)
                 <br>
                 <button id='contraseña' type="submit">GUARDAR</button>
                 <button id="ver" type="button">VER</button>

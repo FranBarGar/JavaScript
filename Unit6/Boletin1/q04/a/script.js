@@ -6,7 +6,7 @@ window.onload = function(){
             for (var i = 0; i < hijos.length; i++) {
                 hijos[i].style.visibility = "hidden";
             }
-            hijos[this.id].style.visibility = "";
+            hijos[this.id].style.visibility = "visible";
             this.setAttribute('class', 'visitado');
         });
     }

@@ -1,27 +1,50 @@
 var reg = [
     '\\d{2}\\.\\d{3}\\.\\d{3}-[TRWAGMYFPDXBNJZSQVHLCKE]',
-    '^[a-zñáéíóú]+( [a-zñáéíóú]+){1,3}$',
-    '^(0[1-9])|([12][0-9])|(3[01])/(0[1-9])|(1[0-2])/\\d{4}$',
+    '^[A-ZÑÁÉÍÓÚ][a-zñáéíóú]+( [A-ZÑÁÉÍÓÚ][a-zñáéíóú]+){1,3}$',
+    "(?:19|20)[0-9]{2}-(?:(?:0[1-9]|1[0-2])-(?:0[1-9]|1[0-9]|2[0-9])|(?:(?!02)(?:0[1-9]|1[0-2])-(?:30))|(?:(?:0[13578]|1[02])-31))",
     '^[0-9]|(10)$',
     '^[a-zñáéíóú][a-zñáéíóú0-9]+@[a-zñáéíóú]+\\.[a-zñáéíóú]+$',
     '^http://www\\.[a-zñáéíóú0-9]+\\.[a-zñáéíóú0-9]+$',
     '^.{8,10}$',
     '^.{8,10}$',
 ];
+var place = [
+    '99.999.999-X',
+    'Xxxx Xxxx',
+    'dd/mm/yyyy',
+    '0-10',
+    'xxx@yyy.zzz',
+    'http://www.xxxx.yyy',
+    '8-10 caracteres',
+    '8-10 caracteres',
+];
 var inputs;
+// '^(0[1-9])|([12][0-9])|(3[01])/(0[1-9])|(1[0-2])/\\d{4}$',
 
 window.onload = function(){
     inputs = document.getElementsByTagName('input');
     for (var i = 0; i < inputs.length; i++) {
+        inputs[i].placeholder=place[i];
         inputs[i].pattern = reg[i];
         inputs[i].addEventListener('change', function(){
             if (!this.checkValidity()){
-                this.setCustomValidity(`Debe introducir el formato indicado en el campo (${this.name})`);
-                this.reportValidity();
+                if (p=document.getElementsByTagName('span')[0]) {
+                    formulario.removeChild(p);
+                }
+                let par = document.createElement('span');
+                let txt = document.createTextNode(`Debe introducir el formato indicado en el campo (${this.name})`);
+                par.appendChild(txt);
+                this.parentNode.insertBefore(par, this.nextSibling);
                 this.value = '';
+            } else {
+                if (p=document.getElementsByTagName('span')[0]) {
+                    formulario.removeChild(p);
+                }
             }
         });
     }
+    hijos.max = 10;
+    hijos.min = 0;
 
     contraseña.addEventListener('click', function(){
         if (pass.value != confPass.value) {
