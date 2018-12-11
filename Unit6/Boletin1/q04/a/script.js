@@ -3,10 +3,14 @@ window.onload = function(){
     for (var i = 0; i < enlaces.length; i++) {
         enlaces[i].addEventListener('click', function(){
             var hijos = document.getElementsByTagName('p');
-            for (var i = 0; i < hijos.length; i++) {
-                hijos[i].style.visibility = "hidden";
+            if (hijos[this.id].style.visibility != "visible") {
+                for (var i = 0; i < hijos.length; i++) {
+                    hijos[i].style.visibility = "hidden";
+                }
+                hijos[this.id].style.visibility = "visible";
+            } else {
+                hijos[this.id].style.visibility = "hidden";
             }
-            hijos[this.id].style.visibility = "visible";
             this.setAttribute('class', 'visitado');
         });
     }

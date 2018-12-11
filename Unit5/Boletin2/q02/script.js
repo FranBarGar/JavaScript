@@ -1,7 +1,7 @@
 var reg = [
     '\\d{2}\\.\\d{3}\\.\\d{3}-[TRWAGMYFPDXBNJZSQVHLCKE]',
     '^[A-ZÑÁÉÍÓÚ][a-zñáéíóú]+( [A-ZÑÁÉÍÓÚ][a-zñáéíóú]+){1,3}$',
-    "(?:19|20)[0-9]{2}-(?:(?:0[1-9]|1[0-2])-(?:0[1-9]|1[0-9]|2[0-9])|(?:(?!02)(?:0[1-9]|1[0-2])-(?:30))|(?:(?:0[13578]|1[02])-31))",
+    '^(0[1-9])|([12][0-9])|(3[01])\/(0[1-9])|(1[0-2])\/[0-9]{4}$',
     '^[0-9]|(10)$',
     '^[a-zñáéíóú][a-zñáéíóú0-9]+@[a-zñáéíóú]+\\.[a-zñáéíóú]+$',
     '^http://www\\.[a-zñáéíóú0-9]+\\.[a-zñáéíóú0-9]+$',
@@ -19,7 +19,7 @@ var place = [
     '8-10 caracteres',
 ];
 var inputs;
-// '^(0[1-9])|([12][0-9])|(3[01])/(0[1-9])|(1[0-2])/\\d{4}$',
+
 
 window.onload = function(){
     inputs = document.getElementsByTagName('input');
@@ -27,19 +27,15 @@ window.onload = function(){
         inputs[i].placeholder=place[i];
         inputs[i].pattern = reg[i];
         inputs[i].addEventListener('change', function(){
+            if (p=document.getElementsByTagName('span')[0]) {
+                formulario.removeChild(p);
+            }
             if (!this.checkValidity()){
-                if (p=document.getElementsByTagName('span')[0]) {
-                    formulario.removeChild(p);
-                }
                 let par = document.createElement('span');
                 let txt = document.createTextNode(`Debe introducir el formato indicado en el campo (${this.name})`);
                 par.appendChild(txt);
                 this.parentNode.insertBefore(par, this.nextSibling);
                 this.value = '';
-            } else {
-                if (p=document.getElementsByTagName('span')[0]) {
-                    formulario.removeChild(p);
-                }
             }
         });
     }
