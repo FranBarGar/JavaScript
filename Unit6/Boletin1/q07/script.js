@@ -30,6 +30,11 @@ window.onload = function(){
     });
     añadir.addEventListener('click', function() {
         var numColum = param("columnas");
+        var i = param("posicion");
+        if (i>=table.rows.length) {
+            alert("No existe dicha fila")
+            return;
+        }
         if (numColum!=0) {
             var row = table.insertRow(-1);
             for (var j = 0; j < numColum; j++) {
