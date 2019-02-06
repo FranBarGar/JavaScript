@@ -6,3 +6,10 @@ $(function(){
     console.log($('#vacations'));
     console.log($('.america'));
 });
+
+// $(document).ready(function(){
+//
+// });
+// $(function(){
+//
+// });
