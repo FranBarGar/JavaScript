@@ -4,12 +4,12 @@ $(function(){
     console.log($('ul:first li:not(:empty)'));
 
     //b
-    console.log($('li:contains("Sistemas Informáticos")'));
-    console.log($('ul:first li:not(:empty):eq(2)'));
+    console.log($('ul:first li:contains("Sistemas Informáticos")'));
+    console.log($('ul:first li:eq(2)'));
 
     //c
     console.log($('li:contains("Sistemas Informáticos")').next());
-    console.log($('ul:first li:eq(2) + li'));
+    console.log($('ul:first li:eq(2)+'));
 
     //d
     console.log($('ul:first li:eq(2) ~ li:not(:empty)'));
@@ -24,11 +24,13 @@ $(function(){
 
 
     //g
-    console.log($(':contains("mod")'));
+    console.log($('[href=mod]'));
 
 
     //h
-    console.log($(':contains("mod")'));
+
+
+    //i
 
 
 });
