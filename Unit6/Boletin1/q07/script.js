@@ -18,7 +18,7 @@ window.onload = function(){
         if (i<table.rows.length) {
             table.deleteRow(i);
         } else {
-            alert("No existe dicha fila")
+            alert("No existe dicha fila");
         }
     });
     vaciar.addEventListener('click', function() {
