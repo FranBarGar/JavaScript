@@ -20,11 +20,11 @@ $(function(){
 
 
     //f
-    console.log($(':not([href])'));
+    console.log($('ul li *:not([href])'));
 
 
     //g
-    console.log($('[href=mod]'));
+    console.log($("[href*='mod']"));
 
 
     //h
