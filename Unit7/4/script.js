@@ -36,23 +36,35 @@ $(function(){
         }
     });
 
-    //7
-    $('ul[data-hours]>li').hover(function(){
+    //7 Lo comento para que no se solape con el 8 y el 9
+    // $('ul[data-hours]>li').hover(function(){
+    //     $('<p class="selector"></p>')
+    //         .text(`${$(this).parent().attr('data-hours')} horas`)
+    //         .appendTo('body')
+    //         .fadeIn();
+    // }, function () {
+    //     $('.selector').remove();
+    // }).mousemove(function (e) {
+    //     $('.selector').css({
+    //         'top': e.pageY,
+    //         'left': e.pageX,
+    //     });
+    // });
+
+    //8 y 9
+    $('body>ul:last').on('click', '.azul', {modalidad: 'presencial'}, function(e){
+        var $this = $(e.target);
         $('<p class="selector"></p>')
-            .text(`${$(this).parent().attr('data-hours')} horas`)
+            .css({
+                'top': e.pageY,
+                'left': e.pageX,
+            })
+            .text(`Modalidad ${e.data.modalidad}: ${$this.parent().attr('data-hours')} horas`)
             .appendTo('body')
-            .fadeIn();
-    }, function () {
-        $('.selector').remove();
-    }).mousemove(function (e) {
-        $('.selector').css({
-            'top': e.pageY,
-            'left': e.pageX,
-        });
+            .fadeIn()
+            .fadeOut(2000, function () {
+                $('.selector').remove();
+            });
     });
-
-    //8
-
-    //9
 
 });
