@@ -1,0 +1,5 @@
+attr pre 1.6 te devolvia el nombre de los atributos cuando
+los atributos no contenian nada, causando confusion en algunos
+parametros como el readOnly, etc.
+prop lo que hace es que para estos parametros te devuelve un
+booleano, que te dice si esta activo o no.
