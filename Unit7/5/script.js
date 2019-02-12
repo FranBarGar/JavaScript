@@ -195,4 +195,53 @@ $(function(){
     //     });
     // })
     // .appendTo('body');
+
+    //8
+    $('<div>')
+    .css({
+        'width': 400,
+        'height': 400,
+    })
+    .append(
+        $('<div id="small">')
+        .css({
+            'position': 'absolute',
+            'width': 50,
+            'height': 50,
+        })
+    )
+    .appendTo('body');
+
+    $('<button>Empezar</button>')
+    .on('click', function () {
+        $('#small').animate({
+            left: '+=50',
+            top: '+=50',
+        }, 2000);
+    })
+    .appendTo('body');
+
+    $('<button>Parar</button>')
+    .on('click', function () {
+        $('#small').stop();
+    })
+    .appendTo('body');
+
+    $('<button>Parar todo</button>')
+    .on('click', function () {
+        $('#small').stop(true);
+    })
+    .appendTo('body');
+
+    $('<button>Para y salta a la siguiente</button>')
+    .on('click', function () {
+        $('#small').stop();
+    })
+    .appendTo('body');
+
+    $('<button>Parar todo y termina la actual</button>')
+    .on('click', function () {
+        $('#small').clearQueue();
+    })
+    .appendTo('body');
 });
