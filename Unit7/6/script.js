@@ -1,4 +1,4 @@
 $(function () {
-    // $(':button').masInfoClick();
+    $(':button').masInfoClick();
     $(':button').masInfo();
 });

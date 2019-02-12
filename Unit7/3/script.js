@@ -14,10 +14,10 @@ $(function(){
     });
 
     //e
-    $("p:first").html('Módulos de primero');
+    $("p:first").text('Módulos de primero');
 
     //f
-    $("p:last").text('Módulos de segundo');
+    $("p:last").html('<b>Módulos de segundo</b>');
 
     //g
     $('ul *:empty').remove();
