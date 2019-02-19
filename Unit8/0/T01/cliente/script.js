@@ -24,7 +24,7 @@ function valida() {
     peticion_http = inicializa_xhr();
     if(peticion_http) {
         peticion_http.onreadystatechange = procesaRespuesta;
-        peticion_http.open("POST", "http://local.apache/Unit8/ejercicio1_HTTP/servidor/compruebaDisponibilidad.php",
+        peticion_http.open("POST", "http://local.apache/Unit8/0/T01/servidor/compruebaDisponibilidad.php",
         true);
         peticion_http.setRequestHeader("Content-Type", "application/x-www-form-urlencoded");
         peticion_http.send(crea_query_string);

@@ -18,6 +18,7 @@ function mostrarDatos() {
                 .appendTo('#DAW'+(clave+1));
             });
         });
+        $('#boton').off();
     }
 
     function error(request, errorMessage){

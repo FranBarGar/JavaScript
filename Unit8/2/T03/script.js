@@ -13,6 +13,7 @@ function mostrarDatos() {
             .html(`${valor.flightNumber}-${valor.time}`)
             .appendTo('.flight-times');
         });
+        $('button').off();
     }
 
     function error(request, errorMessage){

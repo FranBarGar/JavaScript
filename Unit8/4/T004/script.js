@@ -1,9 +1,5 @@
 $(()=>{
     generarTabla(5);
-    $('table').on('click', (e)=>{
-        var str = prompt('Introduzca lo que desea guardar en la celda seleccionada.');
-        $(e.target).html(str);
-    });
 });
 
 function generarTabla(num) {
@@ -18,7 +14,13 @@ function generarTabla(num) {
     for (let i = 0; i < num*2; i++) {
         var $tr = $('<tr>');
         for (let i = 0; i < num; i++) {
-            $tr.append('<td>');
+            $tr.append(
+                $('<td>')
+                .on('click', ()=>{
+                    var str = prompt('Introduzca lo que desea guardar en la celda seleccionada.');
+                    $(this).html(str);
+                })
+            );
         }
         $tbody.append($tr);
     }

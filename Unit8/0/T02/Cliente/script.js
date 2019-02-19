@@ -23,7 +23,7 @@ function valida() {
     peticion_http = inicializa_xhr();
     if(peticion_http) {
         peticion_http.onreadystatechange = procesaRespuesta;
-        peticion_http.open("POST", "http://local.apache/Unit8/T02/Servidor/compruebaDisponibilidadJSON.php",
+        peticion_http.open("POST", "http://local.apache/Unit8/0/T02/Servidor/compruebaDisponibilidadJSON.php",
         true);
         peticion_http.setRequestHeader("Content-Type", "application/json");
         peticion_http.send(crea_query_string());
