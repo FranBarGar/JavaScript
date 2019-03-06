@@ -1,22 +1,19 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-    <title>localStorage</title>
+    <title>Ejemplo JSON y localStorage</title>
     <script src="../jquery-3.3.1.min.js" charset="utf-8"></script>
-    <script src="script.js" charset="utf-8"></script>
+    <script src="js/script.js" charset="utf-8"></script>
 </head>
 <body>
-
-    <p>
-        <button id="boton" type="button">Click me!</button>
-    </p>
-    <div id="result"></div>
-    <p>
-        Haga click en el boton para incrementar el contador.
-    </p>
-    <p>
-        El contador no se reiniciará aunque cierre el navegador, puede probarlo si lo desea.
-    </p>
-
+    <div class="small-container">
+        <h1>Ejemplo JSON y localStorage</h1>
+        <form>
+            <input id="item" type="text" placeholder="Nuevo objeto a la lista">
+        </form>
+        <h2>Lista</h2>
+        <ul></ul>
+        <button>Limpiar todo</button>
+    </div>
 </body>
 </html>
