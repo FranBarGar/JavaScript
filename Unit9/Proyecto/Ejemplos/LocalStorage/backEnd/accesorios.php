@@ -2,11 +2,11 @@
 
 header('Content-type: application/json; charset=utf-8');
 
-class Accesorio   {
-			public $etiqueta;
-			public $precio;
-			public $stock;
-	}
+class Accesorio {
+	public $etiqueta;
+	public $precio;
+	public $stock;
+}
 
 	$a1 = new Accesorio();
 	$a1->etiqueta = 'Botella de agua 0,5';
